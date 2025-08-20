@@ -5,10 +5,13 @@ import (
 	"fmt"
 )
 
+
 func main() {
+	fmt.Println("--- Basic Hello world code ---")
 	fmt.Println("Hello World")
 
 	a, b := 5, 3
+	fmt.Println("--- Arithmetic Operations ---")
 	fmt.Println(simplecalc.Add(a, b))
 
 	c, d := 10, 5
@@ -21,19 +24,15 @@ func main() {
 	fmt.Println(simplecalc.Div(g, h))
 	// --- Flow Control ---
     // --- For Loop ---
+	fmt.Println("--- Flow Control Statements ---")
+	fmt.Println("--- for loop ---")
  	for i:=0; i<5; i++ {
 		fmt.Println(i)
 	}
 
-	// --- While Loop ---
-	// i := 0
-	// for i < 5{
-		// fmt.Println(i)
-		// break
-	// }
-
 
 	// --- If-Else ---
+	fmt.Println("--- If Else Statements ---")
 	num := 5
 	if num%2 == 0 {
 		fmt.Println("Even")
@@ -53,6 +52,7 @@ func main() {
 	}
 
 	// --- Switch/Case ---
+	fmt.Println("--- Switch/Case Statements ---")
 	day := "wed"
 	switch day {
 	case "mon":
@@ -70,17 +70,18 @@ func main() {
 	// --- Pointers ---
 	j := 25
 	p := &j
+	fmt.Println("--- Pointers Concept ---")
 	fmt.Println(j)
 	fmt.Println(p)
 	fmt.Println(*p)
 
 	// --- defer ---
 	defer fmt.Println("Sadala")
-	fmt.Println("Hello")
 	defer fmt.Println("Sumanth")
+	defer fmt.Println("Hello")
+	defer fmt.Println("--- Defer Concept ---")
 
-
-
+    struct_demo()
 }
 
 
