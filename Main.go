@@ -2,6 +2,7 @@ package main
 
 import (
 	"GoLang-Tutorials/simplecalc"
+	"GoLang-Tutorials/mapsexamples"
 	"fmt"
 )
 
@@ -85,8 +86,63 @@ func main() {
 	// Declaring the func struct_demo
 	struct_demo()
 
-    
+	// --- maps ---
+	products := mapsexamples.Appleproducts()
+	fmt.Println("Price of Iphone:", products["Iphone"])
+
+	products["Ipad"] = 499
+
+	if val, ok := products["Airtag"]; ok{
+		fmt.Println("Airtag is available", val)
+	} else {
+		fmt.Println("Airtag is not available")
+	}
+
+	for i, v := range products {
+		fmt.Printf("key: %s, value: %d\n", i,v)
+	}
+
+    // deleting a key
+	delete(products, "Airpods")
+
+
+
+    fmt.Println("After deleting a key from the products")
+	for i, v := range products {
+		fmt.Printf("key: %s, value: %d\n", i,v)
+	}
+
+	x := 5
+	fmt.Println("Before:", x)
+	updateValue(&x)
+	fmt.Println("After:", x)
+
+
+    fmt.Println("--- Method Concept ---")
+	tri := Triangle{5, 6}
+	fmt.Println("Using method:", tri.areamethod())
+
+	fmt.Println("--- function concept ---")
+	fmt.Println("Using function:", areafunc(3.0,4.0))
+
 }
+
+func updateValue(val *int){
+	*val = *val + 10
+}
+type Triangle struct {
+	base float64
+	height float64
+}
+func (t Triangle) areamethod() float64 {
+	return 0.5 * t.base * t.height
+}
+
+
+func areafunc (b, h float64) float64 {
+	return 0.5 * b * h
+}
+
 
 type Person struct {
 	Name string
